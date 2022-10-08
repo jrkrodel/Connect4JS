@@ -1,15 +1,15 @@
-import gameBoard from "./board.js";
-import gameManager from "./gameManager.js";
+import GameBoard from "./Board.js";
+import GameManager from "./GameManager.js";
 import Player from "./player.js";
 
 //Get Game Area
 const gameArea = document.getElementById("gameArea");
 
 //Create game state manager
-const manager = new gameManager();
+const manager = new GameManager();
 
 //Create board
-const board = new gameBoard(gameArea);
+const board = new GameBoard(gameArea);
 
 //Generate players
 const player = new Player();

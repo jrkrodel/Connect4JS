@@ -1,4 +1,4 @@
-export default class gameBoard {
+export default class GameBoard {
   constructor(gameArea) {
     this.gameArea = gameArea;
     this.board = [

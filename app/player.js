@@ -1,4 +1,4 @@
-export default class player {
+export default class Player {
   //Place a token into the next empty space on the board in the select column
   //Need to check if there is a winner after token is played
   takeTurn(col, currentTurn, board) {

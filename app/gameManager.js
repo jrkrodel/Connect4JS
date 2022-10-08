@@ -1,4 +1,4 @@
-export default class gameManager {
+export default class GameManager {
   constructor() {
     this.currentTurn = "yellow";
   }

@@ -1,0 +1,190 @@
+html,
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: #ddd;
+}
+
+#container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.after-win {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#win-screen {
+  padding: 10px 20px 10px 20px;
+  color: black;
+  /* color: white; */
+  border-radius: 20px;
+  animation-name: win-screen;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  display: none;
+}
+#gameArea {
+  background-color: #ddd;
+  padding: 20px;
+  width: 560px;
+  height: 600px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.rectangle {
+  width: 80px;
+  height: 80px;
+  fill: #092c63;
+}
+
+.circle {
+  r: 35px;
+  /* stroke: green; */
+  cursor: pointer;
+  /* fill: #ddd; */
+  stroke-width: 3px;
+}
+
+/* .circle:hover {
+  stroke-width: 5px;
+} */
+
+.preview {
+  r: 35px;
+  /* fill: #ddd; */
+}
+
+.button {
+  width: 100px;
+  height: 100px;
+}
+
+#menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+label,
+input {
+  display: block;
+  margin-bottom: 10px;
+  transition: all 0.5s ease;
+}
+
+input {
+  border-radius: 5px;
+  height: 20px;
+  padding: 5px;
+  border: none;
+}
+
+button {
+  margin-top: 10px;
+  border-radius: 5px;
+  height: 50px;
+  width: 125px;
+  background-color: #092c63;
+  color: white;
+  font-size: 16px;
+  border: none;
+  font-weight: bold;
+  transition: all ease 0.5s;
+}
+
+#reset {
+  display: none;
+  margin-top: 100px;
+  z-index: 99;
+}
+
+input:focus {
+  transform: scale(1.05);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.drop {
+  animation-name: drop;
+  animation-duration: 1s;
+  position: absolute;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.win-clear-animation {
+  animation-name: win-clear;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+
+.show-winning-yellow {
+  animation-name: show-win;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.show-winning-red {
+  animation-name: show-win-red;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes win-screen {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+
+@keyframes show-win {
+  0% {
+    fill: #ddd;
+  }
+  100% {
+    fill: yellow;
+  }
+}
+
+@keyframes show-win-red {
+  0% {
+    fill: #ddd;
+  }
+  100% {
+    fill: red;
+  }
+}
+
+@keyframes drop {
+  20% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(0, 20px);
+  }
+  60% {
+    transform: translate(0, -20px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}

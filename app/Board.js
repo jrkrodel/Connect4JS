@@ -190,7 +190,7 @@ export default class GameBoard {
     let count = 1;
     //Loop through each row
     for (let r = 5; r > 0; r--) {
-      //Player plays a token into a given col, check the selected col from the last row up
+      //Player plays a token into a given location (a row and a col)
       //if two matching tokens are in a row and both are the same color of the last played token
       //add to count, else set count back to 1
       if (
@@ -218,9 +218,9 @@ export default class GameBoard {
 
   //Diagonal win check, where the low point is on the left and high point is on the right
   checkDiagonalRight(player, col, row) {
-    //We first check if row - 3 exists
+    //If there are atleast 3 rows above the played tokens row
     if (this.board[row - 3] !== undefined) {
-      //Check if there is a matching digonal from bottom to top
+      //Check if there is a matching diagonal from the played tokens location, from left to right
       if (
         this.board[row][col] === this.board[row - 1][col + 1] &&
         this.board[row][col] === this.board[row - 2][col + 2] &&
@@ -236,9 +236,9 @@ export default class GameBoard {
         this.isWon = true;
       }
     }
-    //First check if row + 3 exist
+    //If there are atleaast 3 rows below the played tokens row
     if (this.board[row + 3] !== undefined) {
-      //check if there is a matching diagonal from top to bottom
+      //Check if there is a matching diagonal from the played tokens location, from right to left
       if (
         this.board[row][col] === this.board[row + 1][col - 1] &&
         this.board[row][col] === this.board[row + 2][col - 2] &&
@@ -258,8 +258,9 @@ export default class GameBoard {
 
   //Diagonal win check where the low point is on the right and the high point is on the left
   checkDiagonalLeft(player, col, row) {
-    //Check if there is a diagonal starting from bottom to top
+    //If there are atleaast 3 rows above the played tokens row
     if (this.board[row - 3] !== undefined) {
+      //Check if there is a matching diagonal from the played tokens location, from right to left
       if (
         this.board[row][col] === this.board[row - 1][col - 1] &&
         this.board[row][col] === this.board[row - 2][col - 2] &&
@@ -275,8 +276,9 @@ export default class GameBoard {
         this.isWon = true;
       }
     }
-    //Check if there is a diagonal starting from top to bottom
+    //If there are atleaast 3 rows below  the played tokens row
     if (this.board[row + 3] !== undefined) {
+      //Check if there is a matching diagonal from the played tokens location, from left to right
       if (
         this.board[row][col] === this.board[row + 1][col + 1] &&
         this.board[row][col] === this.board[row + 2][col + 2] &&

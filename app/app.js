@@ -1,6 +1,6 @@
 import GameBoard from "./Board.js";
 import GameManager from "./GameManager.js";
-import Player from "./player.js";
+import Player from "./Player.js";
 
 //Get Game Area from DOM
 const gameArea = document.getElementById("gameArea");

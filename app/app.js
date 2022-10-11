@@ -2,17 +2,17 @@ import GameBoard from "./Board.js";
 import GameManager from "./GameManager.js";
 import Player from "./player.js";
 
-//Get Game Area
+//Get Game Area from DOM
 const gameArea = document.getElementById("gameArea");
 
-//Create game state manager
+//Create GameManager, is in charge of changing visual game state, player turns, etc
 const manager = new GameManager();
 
-//Create board
+//Create board, has win check methods and board data
 const board = new GameBoard(gameArea);
 
-//Generate players
+//Generate player, holds method to take a turn
 const player = new Player();
 
-//Start game
+//Start game with the player and the board
 manager.initGame(player, board);
